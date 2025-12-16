@@ -1,0 +1,19 @@
+[package]
+name = "seido"
+edition = "2024"
+
+[dependencies]
+tungstenite = "*"
+miniserde = "*"
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+overflow-checks = false
+debug = false
+
+[profile.release]
+codegen-units = 1
+lto = true
+strip = true
